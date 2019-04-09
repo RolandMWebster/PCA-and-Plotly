@@ -8,6 +8,8 @@ always_allow_html: yes
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
+## NOTE: PLOTLY PLOTS ARE CURRENTLY NOT WORKING
+
 ## Outline
 
 We are going to outline the concept of *Principal Component Analysis* (PCA) and use it to reduce the size of the feature space of the Iris data set. We'll then fit a tree based model to both the original Iris data set and the new PCA-transformed data and compare model performance. We'll be using plotly to produce various plots including a Scree plot for our PCA process.
@@ -85,10 +87,10 @@ p3 <- plot_ly(iris_long %>% filter(Species == "virginica"),
                               Feature,"\n"))
 
 # Use subplots to plot together
-subplot(p1,
-        style(p2, showlegend = FALSE),
-        style(p3, showlegend = FALSE),
-        nrows = 3)
+# subplot(p1,
+#         style(p2, showlegend = FALSE),
+#         style(p3, showlegend = FALSE),
+#         nrows = 3)
 ```
 
 ### Split Features and Response
@@ -208,7 +210,7 @@ screeplot <- plot_ly() %>%
          yaxis = list(title = "Variation",
                       tickformat = ',.0%'))
 
-screeplot
+# screeplot
 ```
 
 
@@ -262,5 +264,5 @@ scatterplot <- plot_ly(data = transformed_df) %>%
             mode = "markers") %>%
   layout(title = "Iris Species after PCA")
 
-scatterplot
+# scatterplot
 ```
