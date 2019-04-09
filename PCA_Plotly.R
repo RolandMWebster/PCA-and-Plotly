@@ -43,9 +43,6 @@ subplot(p1,
         nrows = 3)
   
 
-
-
-
 # Get feature data:
 x_df <- iris %>% 
   dplyr::select(-Species)
